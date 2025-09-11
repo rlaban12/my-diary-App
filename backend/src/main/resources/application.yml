@@ -1,0 +1,47 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  # mail send setting
+  mail:
+    host: smtp.naver.com
+    port: 465
+    username:     # github ?? ??
+    password:   # github ?? ??
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+
+  # database setting
+  datasource:
+    url: jdbc:mariadb://localhost:3306/diarydb
+    username: root
+    password: mariadb
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    # DBMS dialect setting
+    database-platform: org.hibernate.dialect.MariaDB106Dialect
+    hibernate:
+      # ddl
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true # SQL log
+    database: mysql
+
+# log level setting
+logging:
+  level:
+    root: info
+    com.study.event: debug
+    org.hibernate.SQL: debug
+
+
+jwt:
+  secret-key:   # ?????? ??????? ??? ??
+  access-token-validity-time: 3600000  # 1?? (ms)
+  refresh-token-validity-time: 604800000 # 7? (ms)
