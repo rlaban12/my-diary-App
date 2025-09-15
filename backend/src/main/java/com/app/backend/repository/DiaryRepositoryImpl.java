@@ -9,15 +9,19 @@ import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.SliceImpl;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+import static com.app.backend.domain.entity.QDiary.diary;
+
 @Repository
 @Slf4j
 @RequiredArgsConstructor
-public class DiaryRepositoryImpl {
+public class DiaryRepositoryImpl implements DiaryRepositoryCustom {
 
     private final JPAQueryFactory factory;
 
+    @Override
     public Slice<Diary> findDiarys(Long userId, Pageable pageable) {
-
         /*
             총 데이터 수 23개, 한번에 가져올 데이터 5개
             1회차 로딩 - 5개
@@ -39,8 +43,25 @@ public class DiaryRepositoryImpl {
             5회차 로딩 - 6개 -> 실제로 3개만 보임 -> 끝이구나 (6개이하로 나오면)
          */
 
-        return new SliceImpl<>();
+        // 목록 조회
+        List<Diary> diaryList = factory
+                .selectFrom(diary)
+                .where(diary.user.userId.eq(userId))
+                .orderBy(diary.createdAt.desc())
+                .offset(pageable.getOffset())  // 몇개를 건너뛸지
+                .limit(pageable.getPageSize() + 1)  // 몇개를 조회할지
+                .fetch();
 
+        // 추가 데이터 (ex : 6번째 데이터)가 있는지 확인할 변수
+        boolean hasNext = false;
+        //       6           >       5
+        if (diaryList.size() > pageable.getPageSize()) {
+            hasNext = true;
+            // 실제로는 5개만 리턴해야함. 6번째 데이터는 삭제
+            diaryList.remove(diaryList.size() - 1);
+        }
+
+        return new SliceImpl<>(diaryList, pageable, hasNext);
     }
 
 

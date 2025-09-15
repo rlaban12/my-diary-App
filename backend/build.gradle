@@ -41,6 +41,9 @@ dependencies {
     annotationProcessor 'jakarta.annotation:jakarta.annotation-api'
     annotationProcessor 'jakarta.persistence:jakarta.persistence-api'
 
+    // 쿼리파라미터 추가 외부로그 남기기
+    implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.1'
+
     // Dotenv (.env 자동 로딩)
     implementation 'me.paulschwarz:spring-dotenv:4.0.0'
 

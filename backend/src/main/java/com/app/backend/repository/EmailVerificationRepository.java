@@ -9,5 +9,5 @@ import java.util.Optional;
 public interface EmailVerificationRepository extends JpaRepository<EmailVerification, Long> {
 
     // 사용자의 ID를 통해 인증코드정보 조회
-    Optional<EmailVerification> findByEventUser(User eventUser);
+    Optional<EmailVerification> findByUser(User diaryUser);
 }
