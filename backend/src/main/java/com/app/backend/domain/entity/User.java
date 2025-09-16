@@ -41,7 +41,7 @@ public class User {
     private String password;
 
     // 일기와 양방향 연결
-    @OneToMany(mappedBy = "", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     private List<Diary> diaryList = new ArrayList<>();
 

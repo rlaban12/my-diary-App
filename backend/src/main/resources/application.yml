@@ -6,8 +6,8 @@ spring:
   mail:
     host: smtp.naver.com
     port: 465
-    username:     # github ?? ??
-    password:   # github ?? ??
+    username: ${NAVER_USERNAME} # github ?? ??
+    password: ${NAVER_PASSWORD}  # github ?? ??
     protocol: smtp
     properties:
       mail:
@@ -27,7 +27,7 @@ spring:
     database-platform: org.hibernate.dialect.MariaDB106Dialect
     hibernate:
       # ddl
-      ddl-auto: update
+      ddl-auto: create-drop
     properties:
       hibernate:
         format_sql: true # SQL log
@@ -42,6 +42,6 @@ logging:
 
 
 jwt:
-  secret-key:   # ?????? ??????? ??? ??
+  secret-key: ${JWT_SECRET}  # ?????? ??????? ??? ??
   access-token-validity-time: 3600000  # 1?? (ms)
   refresh-token-validity-time: 604800000 # 7? (ms)
