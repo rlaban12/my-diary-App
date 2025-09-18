@@ -11,6 +11,7 @@ const LoginForm = () => {
             <Form
                 method="post"
                 className={styles.form}>
+                <h1>나만의 일기장</h1>
                 <h1>Log in</h1>
                 <p>
                     <label htmlFor="email">Email</label>

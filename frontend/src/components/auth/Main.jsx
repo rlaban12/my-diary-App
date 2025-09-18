@@ -4,6 +4,7 @@ import {Form} from 'react-router-dom';
 const Main = ({ userData }) => {
     return (
         <>
+            <h1>나만의 일기장</h1>
             <h2>{userData.email}님 환영합니다.</h2>
             <h3>현재 권한: [ {userData.role} ]</h3>
             <Form method='POST' action='/logout'>

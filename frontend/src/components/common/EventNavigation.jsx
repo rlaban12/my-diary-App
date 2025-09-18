@@ -14,14 +14,14 @@ const EventsNavigation = () => {
                             to='/events'
                             className={activeClassFn}
                             end>
-                            All Events
+                            All Diarys
                         </NavLink>
                     </li>
                     <li>
                         <NavLink
                             to='/events/new'
                             className={activeClassFn}>
-                            New Event
+                            New Diary
                         </NavLink>
                     </li>
                 </ul>

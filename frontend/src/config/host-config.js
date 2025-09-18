@@ -22,10 +22,10 @@ if (clientHostName === 'localhost') {
 const API_BASE_ENDPOINT = `${backendHostName}/api`;
 
 // API 리소스별 엔드포인트
-const EVENT = '/events';
+const DIARY = '/diarys';
 const AUTH = '/auth';
 
 // http://localhost:9000/api/events
-export const EVENT_API_URL = `${API_BASE_ENDPOINT}${EVENT}`;
+export const EVENT_API_URL = `${API_BASE_ENDPOINT}${DIARY}`;
 // http://localhost:9000/api/auth
 export const AUTH_API_URL = `${API_BASE_ENDPOINT}${AUTH}`;

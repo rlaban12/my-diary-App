@@ -6,7 +6,7 @@ const EventItem = ({ event }) => {
         id,
         title,
         desc: description,
-        'img-url': image,
+        // 'img-url': image,
         'start-date': date,
     } = event;
 
@@ -20,10 +20,10 @@ const EventItem = ({ event }) => {
 
     return (
         <article className={styles.event}>
-            <img
-                src={image}
-                alt={title}
-            />
+            {/*<img*/}
+            {/*    src={image}*/}
+            {/*    alt={title}*/}
+            {/*/>*/}
             <h1>{title}</h1>
             <time>{date}</time>
             <p>{description}</p>

@@ -36,16 +36,16 @@ const EventForm = ({ method, event={} }) => {
                     defaultValue={event ? title : ''}
                 />
             </p>
-            <p>
-                <label htmlFor='image'>Image</label>
-                <input
-                    id='image'
-                    type='url'
-                    name='image'
-                    required
-                    defaultValue={event ? image : ''}
-                />
-            </p>
+            {/*<p>*/}
+            {/*    <label htmlFor='image'>Image</label>*/}
+            {/*    <input*/}
+            {/*        id='image'*/}
+            {/*        type='url'*/}
+            {/*        name='image'*/}
+            {/*        required*/}
+            {/*        defaultValue={event ? image : ''}*/}
+            {/*    />*/}
+            {/*</p>*/}
             <p>
                 <label htmlFor='date'>Date</label>
                 <input
@@ -57,7 +57,7 @@ const EventForm = ({ method, event={} }) => {
                 />
             </p>
             <p>
-                <label htmlFor='description'>Description</label>
+                <label htmlFor='description'>Diary Content</label>
                 <textarea
                     id='description'
                     name='description'

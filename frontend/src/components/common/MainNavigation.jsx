@@ -20,7 +20,7 @@ const MainNavigation = () => {
                         <NavLink
                             to='/events'
                         >
-                            Events
+                            Diarys
                         </NavLink>
                     </li>
 

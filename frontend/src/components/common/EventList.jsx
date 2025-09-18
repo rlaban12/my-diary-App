@@ -6,7 +6,7 @@ const EventList = ({ eventList }) => {
 
     return (
         <div className={events}>
-            <h1>All Events</h1>
+            <h1>All Diarys</h1>
             <ul className={list}>
                 {eventList.map((ev) => (
                     <li
