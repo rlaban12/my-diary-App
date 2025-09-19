@@ -6,7 +6,7 @@ const EventForm = ({ method, event={} }) => {
     // 새로고침 없이 페이지 이동
     const navigate = useNavigate();
 
-    const { title, desc, 'img-url':image, 'start-date': date } = event;
+    const { 'title':title, 'diary':diary, 'start-date': date } = event;
 
     // yyyy년 MM월 dd일 ->  yyyy-MM-dd 로 변경
     const formatDate = (date) => {
@@ -36,16 +36,6 @@ const EventForm = ({ method, event={} }) => {
                     defaultValue={event ? title : ''}
                 />
             </p>
-            {/*<p>*/}
-            {/*    <label htmlFor='image'>Image</label>*/}
-            {/*    <input*/}
-            {/*        id='image'*/}
-            {/*        type='url'*/}
-            {/*        name='image'*/}
-            {/*        required*/}
-            {/*        defaultValue={event ? image : ''}*/}
-            {/*    />*/}
-            {/*</p>*/}
             <p>
                 <label htmlFor='date'>Date</label>
                 <input
@@ -63,7 +53,7 @@ const EventForm = ({ method, event={} }) => {
                     name='description'
                     rows='5'
                     required
-                    defaultValue={event ? desc : ''}
+                    defaultValue={event ? diary : ''}
                 />
             </p>
             <div className={styles.actions}>

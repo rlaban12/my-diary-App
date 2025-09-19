@@ -31,8 +31,9 @@ const EventPage = () => {
         await new Promise(r => setTimeout(r, 1500));
 
         const response = await fetchWithAuth(`${EVENT_API_URL}?page=${currentPage}`);
-        const {hasNext, eventList: events} = await response.json();
-        setEventList(prev => [...prev, ...events]);
+        const {hasNext, diaryList} = await response.json();
+        console.log('diaryList: ', diaryList);
+        setEventList(prev => [...prev, ...diaryList]);
         // 페이지번호 갱신
         setCurrentPage(prev => prev + 1);
         setIsFinish(!hasNext);

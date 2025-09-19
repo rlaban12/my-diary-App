@@ -3,10 +3,9 @@ import {Link, useSubmit} from 'react-router-dom';
 
 const EventItem = ({ event }) => {
     const {
-        id,
-        title,
-        desc: description,
-        // 'img-url': image,
+        'id':id,
+        'title':title,
+        'diary': diary,
         'start-date': date,
     } = event;
 
@@ -20,13 +19,9 @@ const EventItem = ({ event }) => {
 
     return (
         <article className={styles.event}>
-            {/*<img*/}
-            {/*    src={image}*/}
-            {/*    alt={title}*/}
-            {/*/>*/}
             <h1>{title}</h1>
             <time>{date}</time>
-            <p>{description}</p>
+            <p>{diary}</p>
             <menu className={styles.actions}>
                 <Link to='edit'>Edit</Link>
                 <button onClick={handleRemove}>Delete</button>

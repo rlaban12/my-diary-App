@@ -25,7 +25,7 @@ const API_BASE_ENDPOINT = `${backendHostName}/api`;
 const DIARY = '/diarys';
 const AUTH = '/auth';
 
-// http://localhost:9000/api/events
+// http://localhost:9000/api/diarys
 export const EVENT_API_URL = `${API_BASE_ENDPOINT}${DIARY}`;
 // http://localhost:9000/api/auth
 export const AUTH_API_URL = `${API_BASE_ENDPOINT}${AUTH}`;

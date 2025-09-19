@@ -8,7 +8,7 @@ const EventSkeleton = () => {
                     <div
                         className={styles.skeleton}
                         key={index}>
-                        <div className={styles.imageSkeleton} />
+                        {/*<div className={styles.imageSkeleton} />*/}
                         <div className={styles.contentSkeleton}>
                             <div className={styles.titleSkeleton} />
                             <div className={styles.dateSkeleton} />

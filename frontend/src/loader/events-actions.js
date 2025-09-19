@@ -13,10 +13,8 @@ export const saveAction = async ({ request, params }) => {
     // 서버로 보낼 payload
     const payload = {
         title: formData.get('title'),
-        // diaryContent: formData.get('description'),
-        diaryContent: formData.get('diaryContent'),
-        beginDate: formData.get('date'),
-        // imageUrl: formData.get('image')
+        diaryContent: formData.get('description'),
+        beginDate: formData.get('date')
     };
 
     let requestUrl = EVENT_API_URL;

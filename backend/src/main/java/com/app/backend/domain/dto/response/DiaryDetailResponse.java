@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public record DiaryDetailResponse(
         String id,
         String title,
-        String desc,
+        String diary,
         @JsonProperty("start-date")
         @JsonFormat(pattern = "yyyy년 MM월 dd일")
         LocalDate startDate
@@ -21,7 +21,7 @@ public record DiaryDetailResponse(
         return DiaryDetailResponse.builder()
                 .id(diary.getDiaryId().toString())
                 .title(diary.getTitle())
-                .desc(diary.getDiaryContent())
+                .diary(diary.getDiaryContent())
                 .startDate(diary.getDate())
                 .startDate(diary.getDate())
                 .build();

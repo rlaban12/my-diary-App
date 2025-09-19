@@ -10,13 +10,9 @@ const EventList = ({ eventList }) => {
             <ul className={list}>
                 {eventList.map((ev) => (
                     <li
-                        key={ev.eventId}
+                        key={ev.diaryId}
                         className={item}>
-                        <Link to={ev.eventId.toString()}>
-                            <img
-                                src={ev.imgUrl}
-                                alt={ev.title}
-                            />
+                        <Link to={ev.diaryId.toString()}>
                             <div className={content}>
                                 <h2>{ev.title}</h2>
                                 <time>{ev.startDate}</time>
