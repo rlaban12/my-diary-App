@@ -1,4 +1,4 @@
-import styles from './EventSkeleton.module.scss';
+import styles from '../common/EventSkeleton.module.scss'
 
 const EventSkeleton = () => {
     return (

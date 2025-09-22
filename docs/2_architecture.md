@@ -42,7 +42,7 @@
 ```
 사용자 (Browser)
    ↕︎  [HTTP 요청/응답]
-프레젠테이션 계층 (Spring Boot Controller + JSP)
+프레젠테이션 계층 (Spring Boot Controller + JPA + QueryDsl)
    ↕︎  [메서드 호출]
 비즈니스 계층 (Service Layer)
    ↕︎  [Repository 호출]
